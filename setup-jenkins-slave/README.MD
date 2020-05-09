@@ -1,5 +1,3 @@
-.
-
 ### Prerequisites
 1. Jenkins Master Running 
 1. EC2 RHEL 7.x Instance - _for Slave Node
@@ -16,11 +14,11 @@ yum install java-1.8*
 ## Setup Jenkins Slave
 ```sh
 # Create user and add the user to wheel group
-useradd jenkins-slave-01
+useradd jenkins-01
 # Create SSH Keys
-sudo su - jenkins-slave-01
-ssh-keygen -t rsa -N "" -f /home/jenkins-slave-01/.ssh/id_rsa
-# The private and public keys will be created at these locations `/home/jenkins-slave-01/.ssh/id_rsa` and `/home/jenkins-slave-01/.ssh/id_rsa.pub`
+sudo su - jenkins-01
+ssh-keygen -t rsa -N "" -f /home/jenkins-01/.ssh/id_rsa
+# The private and public keys will be created at these locations `/home/jenkins-01/.ssh/id_rsa` and `/home/jenkins-01/.ssh/id_rsa.pub`
 cd .ssh
 cat id_rsa.pub > authorized_keys
 chmod 700 authorized_keys
@@ -40,7 +38,6 @@ chmod 700 known_hosts
 #### Configure the Slave using `Manage Jenkins`
 Configure the node as shown here
 `Manage Jenkins` > `Manage Nodes` > `New Node`
-![Jenkins Master and Slave Configuration](https://raw.githubusercontent.com/miztiik/DevOps-Demos/master/setup-jenkins-slave/images/Slave-Node-Configuration-01.png)
 ### Test Jenkins Jobs
 1. Create “new item”
 1. Enter an item name – `My-First-Project`
@@ -50,29 +47,7 @@ Configure the node as shown here
      - Update your _jenkins slave label_ `Java` 
 1. Under Build section
    Execute shell
-   ```sh
-   #!/bin/bash
-   echo "_______________________________"
-   echo "|                             |"
-   echo "|   Welcome to Valaxy Demo    |"
-   echo "|           _nnnn_            |"
-   echo "|          dGGGGMMb           |"
-   echo "|         @p~qp~~qMb          |"
-   echo "|         M|@||@) M|          |"
-   echo "|         @,----.JM|          |"
-   echo "|        JS^\__/  qKL         |"
-   echo "|       dZP        qKRb       |"
-   echo "|      dZP          qKKb      |"
-   echo "|     fZP            SMMb     |"
-   echo "|     HZM            MMMM     |"
-   echo "|     FqM            MMMM     |"
-   echo "|   __| '.        |\dS'qML    |"
-   echo "|   |    '.       | ' \Zq     |"
-   echo "|  _)      \.___.,|     .'    |"
-   echo "|  \____   )MMMMMP|   .'      |"
-   echo "|       '-'       '--' hjm    |"
-   echo "_______________________________"
-   ```
+  echo "Hello world"
 1. Save your job 
 1. Build job
 1. Check "console output"

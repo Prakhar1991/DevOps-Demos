@@ -80,11 +80,3 @@ Configure the node as shown here
 1. Save your job 
 1. Build job
 1. Check "console output"
-
-### Other Videos
- - [x] [Install and Configure Jenkins in AWS EC2](https://youtu.be/-0dkiteJEuE)
- - [x] [Configure Users & Groups in Jenkins](https://youtu.be/jZOqcB32dYM)
- - [x] [Secure your Jenkins Server](https://youtu.be/19FmJumnkDc)
- - [x] [Jenkins Plugin Installation](https://youtu.be/p_PqPBbjaZ4)
- - [x] [Jenkins Master-Slave Configuration](https://youtu.be/hwrYURP4O2k)
-
